@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Development project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto:700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- sprite -->
+<svg style="display: none;">
+    <symbol id="phone" viewBox="0 0 60 60">
+        <g>
+            <path d="M35.5,30.995c-0.553,0-1,0.447-1,1V46h-30V8h30v13.998c0,0.553,0.447,1,1,1s1-0.447,1-1V4.405
+                C36.5,1.977,34.523,0,32.095,0H6.905C4.477,0,2.5,1.977,2.5,4.405v51.189C2.5,58.023,4.477,60,6.905,60h25.189
+                c2.429,0,4.405-1.977,4.405-4.405v-23.6C36.5,31.442,36.053,30.995,35.5,30.995z M6.905,2h25.189C33.421,2,34.5,3.079,34.5,4.405V6
+                h-30V4.405C4.5,3.079,5.579,2,6.905,2z M32.095,58H6.905C5.579,58,4.5,56.921,4.5,55.595V48h30v7.595
+                C34.5,56.921,33.421,58,32.095,58z"/>
+            <path d="M19.5,49c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S21.706,49,19.5,49z M19.5,55c-1.103,0-2-0.897-2-2s0.897-2,2-2
+                s2,0.897,2,2S20.603,55,19.5,55z"/>
+            <path d="M15.5,5h4c0.553,0,1-0.447,1-1s-0.447-1-1-1h-4c-0.553,0-1,0.447-1,1S14.947,5,15.5,5z"/>
+            <path d="M22.5,5h1c0.553,0,1-0.447,1-1s-0.447-1-1-1h-1c-0.553,0-1,0.447-1,1S21.947,5,22.5,5z"/>
+            <path d="M56.5,26H20.914l10.293-10.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L17.794,26.292
+                c-0.093,0.093-0.166,0.204-0.217,0.327c-0.101,0.244-0.101,0.52,0,0.764c0.051,0.123,0.124,0.234,0.217,0.327l11.999,11.999
+                C29.988,39.902,30.244,40,30.5,40s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L20.914,28H56.5c0.553,0,1-0.447,1-1
+                S57.053,26,56.5,26z"/>
+        </g>
+    </symbol>
+</svg>
+
+<svg style="display: none;">
+    <symbol id="facebook" viewBox="0 0 512 512">
+        <g>
+		    <path d="M288,176v-64c0-17.664,14.336-32,32-32h32V0h-64c-53.024,0-96,42.976-96,96v80h-64v80h64v256h96V256h64l32-80H288z"/>
+	    </g>
+    </symbol>
+</svg>
+
+<svg style="display: none;">
+    <symbol id="twitter" viewBox="0 0 410.155 410.155">
+        <path d="M403.632,74.18c-9.113,4.041-18.573,7.229-28.28,9.537c10.696-10.164,18.738-22.877,23.275-37.067
+	        l0,0c1.295-4.051-3.105-7.554-6.763-5.385l0,0c-13.504,8.01-28.05,14.019-43.235,17.862c-0.881,0.223-1.79,0.336-2.702,0.336
+	        c-2.766,0-5.455-1.027-7.57-2.891c-16.156-14.239-36.935-22.081-58.508-22.081c-9.335,0-18.76,1.455-28.014,4.325
+	        c-28.672,8.893-50.795,32.544-57.736,61.724c-2.604,10.945-3.309,21.9-2.097,32.56c0.139,1.225-0.44,2.08-0.797,2.481
+	        c-0.627,0.703-1.516,1.106-2.439,1.106c-0.103,0-0.209-0.005-0.314-0.015c-62.762-5.831-119.358-36.068-159.363-85.14l0,0
+	        c-2.04-2.503-5.952-2.196-7.578,0.593l0,0C13.677,65.565,9.537,80.937,9.537,96.579c0,23.972,9.631,46.563,26.36,63.032
+	        c-7.035-1.668-13.844-4.295-20.169-7.808l0,0c-3.06-1.7-6.825,0.485-6.868,3.985l0,0c-0.438,35.612,20.412,67.3,51.646,81.569
+	        c-0.629,0.015-1.258,0.022-1.888,0.022c-4.951,0-9.964-0.478-14.898-1.421l0,0c-3.446-0.658-6.341,2.611-5.271,5.952l0,0
+	        c10.138,31.651,37.39,54.981,70.002,60.278c-27.066,18.169-58.585,27.753-91.39,27.753l-10.227-0.006
+	        c-3.151,0-5.816,2.054-6.619,5.106c-0.791,3.006,0.666,6.177,3.353,7.74c36.966,21.513,79.131,32.883,121.955,32.883
+	        c37.485,0,72.549-7.439,104.219-22.109c29.033-13.449,54.689-32.674,76.255-57.141c20.09-22.792,35.8-49.103,46.692-78.201
+	        c10.383-27.737,15.871-57.333,15.871-85.589v-1.346c-0.001-4.537,2.051-8.806,5.631-11.712c13.585-11.03,25.415-24.014,35.16-38.591
+	        l0,0C411.924,77.126,407.866,72.302,403.632,74.18L403.632,74.18z"/>
+    </symbol>
+</svg>
+
+<svg style="display: none;"> 
+    <symbol id="message" viewBox="0 -26 512 512">
+        <path d="m256 100c-5.519531 0-10 4.480469-10 10s4.480469 10 10 10 10-4.480469 10-10-4.480469-10-10-10zm0 0"/>
+        <path d="m90 280c5.519531 0 10-4.480469 10-10s-4.480469-10-10-10-10 4.480469-10 10 4.480469 10 10 10zm0 0"/>
+        <path d="m336 0c-90.027344 0-163.917969 62.070312-169.632812 140.253906-85.738282 4.300782-166.367188 66.125-166.367188 149.746094 0 34.945312 13.828125 68.804688 39 95.632812 4.980469 20.53125-1.066406 42.292969-16.070312 57.296876-2.859376 2.859374-3.714844 7.160156-2.167969 10.898437 1.546875 3.734375 5.191406 6.171875 9.238281 6.171875 28.519531 0 56.003906-11.183594 76.425781-30.890625 19.894531 6.78125 45.851563 10.890625 69.574219 10.890625 90.015625 0 163.898438-62.054688 169.628906-140.222656 20.9375-.929688 42.714844-4.796875 59.945313-10.667969 20.421875 19.707031 47.90625 30.890625 76.425781 30.890625 4.046875 0 7.691406-2.4375 9.238281-6.171875 1.546875-3.738281.691407-8.039063-2.167969-10.898437-15.003906-15.003907-21.050781-36.765626-16.070312-57.296876 25.171875-26.828124 39-60.6875 39-95.632812 0-86.886719-86.839844-150-176-150zm-160 420c-23.601562 0-50.496094-4.632812-68.511719-11.800781-3.859375-1.539063-8.269531-.527344-11.078125 2.539062-12.074218 13.199219-27.773437 22.402344-44.878906 26.632813 9.425781-18.058594 11.832031-39.347656 6.097656-59.519532-.453125-1.589843-1.292968-3.042968-2.445312-4.226562-22.6875-23.367188-35.183594-53.066406-35.183594-83.625 0-70.46875 71.4375-130 156-130 79.851562 0 150 55.527344 150 130 0 71.683594-67.289062 130-150 130zm280.816406-186.375c-1.152344 1.1875-1.992187 2.640625-2.445312 4.226562-5.734375 20.171876-3.328125 41.460938 6.097656 59.519532-17.105469-4.226563-32.804688-13.433594-44.878906-26.632813-2.808594-3.0625-7.21875-4.078125-11.078125-2.539062-15.613281 6.210937-37.886719 10.511719-58.914063 11.550781-2.921875-37.816406-21.785156-73.359375-54.035156-99.75h130.4375c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10h-161.160156c-22.699219-11.554688-48.1875-18.292969-74.421875-19.707031 5.746093-67.164063 70.640625-120.292969 149.582031-120.292969 84.5625 0 156 59.53125 156 130 0 30.558594-12.496094 60.257812-35.183594 83.625zm0 0"/>
+        <path d="m256 260h-126c-5.523438 0-10 4.476562-10 10s4.476562 10 10 10h126c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10zm0 0"/>
+        <path d="m256 320h-166c-5.523438 0-10 4.476562-10 10s4.476562 10 10 10h166c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10zm0 0"/>
+        <path d="m422 100h-126c-5.523438 0-10 4.476562-10 10s4.476562 10 10 10h126c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10zm0 0"/>
+    </symbol>
+</svg>
+
+<svg style="display: none;">
+    <symbol id="ball" viewBox="0 0 438.533 438.533">
+        <g>
+            <path d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0
+                c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267
+                c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407
+                s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062
+                C438.533,179.485,428.732,142.795,409.133,109.203z M219.27,31.977c47.201,0,88.41,15.607,123.621,46.82l-3.569,4.993
+                c-1.427,2.002-4.996,5.852-10.704,11.565c-5.709,5.708-11.943,11.136-18.699,16.274c-6.762,5.14-15.94,10.992-27.555,17.559
+                c-11.611,6.567-23.982,12.328-37.117,17.276c-21.887-40.355-45.296-76.709-70.231-109.064
+                C190.055,33.784,204.805,31.977,219.27,31.977z M72.524,103.06c18.271-23.026,40.537-40.73,66.806-53.1
+                c23.601,31.405,46.82,67.381,69.662,107.921c-57.862,15.227-115.532,22.841-173.014,22.838
+                C42.072,151.98,54.253,126.091,72.524,103.06z M44.54,286.794c-8.376-21.412-12.563-43.923-12.563-67.527
+                c0-2.666,0.098-4.665,0.286-5.996c68.905,0,132.955-8.848,192.149-26.553c6.092,11.8,11.136,22.364,15.133,31.693
+                c-0.771,0.38-1.999,0.806-3.713,1.283c-1.719,0.476-2.953,0.806-3.721,0.999l-10.561,3.711
+                c-7.236,2.666-16.708,7.235-28.409,13.703c-11.704,6.478-24.123,14.182-37.257,23.13c-13.134,8.949-26.696,20.797-40.684,35.553
+                c-13.99,14.75-25.743,30.591-35.26,47.53C64.713,327.381,52.914,308.2,44.54,286.794z M219.27,406.56
+                c-44.54,0-84.32-14.277-119.343-42.825l4.283,3.142c6.661-14.66,16.462-28.746,29.408-42.257
+                c12.944-13.511,25.41-24.413,37.401-32.695c11.991-8.274,25.028-16.077,39.115-23.414c14.084-7.323,23.691-11.991,28.835-13.983
+                c5.14-1.998,9.233-3.572,12.278-4.716l0.568-0.287h0.575c18.647,48.916,31.977,96.313,39.968,142.184
+                C268.756,401.611,244.397,406.557,219.27,406.56z M376.876,320.479c-14.086,21.796-31.696,39.834-52.817,54.104
+                c-7.81-43.776-19.985-88.415-36.549-133.902c37.877-5.907,76.8-3.142,116.771,8.274
+                C400.092,274.841,390.955,298.687,376.876,320.479z M403.706,216.698c-1.903-0.378-4.285-0.81-7.139-1.283
+                c-2.854-0.473-6.331-1.047-10.424-1.713c-4.087-0.666-8.662-1.283-13.702-1.855c-5.045-0.571-10.421-1.093-16.136-1.569
+                c-5.708-0.478-11.8-0.855-18.268-1.143c-6.479-0.284-13.042-0.428-19.705-0.428c-6.656,0-13.657,0.193-20.981,0.571
+                c-7.326,0.375-14.414,1.049-21.265,1.999c-0.575-0.953-1.287-2.524-2.143-4.714c-0.855-2.187-1.479-3.855-1.848-4.997
+                c-3.621-7.994-7.81-17.036-12.573-27.121c13.134-5.333,25.652-11.469,37.555-18.418c11.892-6.949,21.402-13.131,28.544-18.555
+                c7.139-5.43,13.895-11.188,20.27-17.277c6.379-6.09,10.513-10.323,12.423-12.703c1.906-2.384,3.713-4.714,5.424-6.995l0.287-0.288
+                c27.788,33.88,41.974,72.897,42.538,117.059L403.706,216.698z"/>
+        </g>
+    </symbol>
+</svg>
+<!-- /sprite -->
+
+
+<!-- section-header -->
+<section class="section-header" id="header">
+    <div class="header-inner">
+        <a class="header-inner-logo" data-scroll="#intro">Your Logo</a>
+        <nav class="header-inner-nav">
+            <a href="#" class="header-inner-nav_a" data-scroll="#intro">Home</a>
+            <a href="#" class="header-inner-nav_a" data-scroll="#about">About</a>
+            <a href="#" class="header-inner-nav_a" data-scroll="#services">Servicing</a>
+            <a href="#" class="header-inner-nav_a" data-scroll="#works">Portfolio</a>
+            <a href="#" class="header-inner-nav_a" data-scroll="#plan">Blog</a>
+            <a href="#" class="header-inner-nav_a" data-scroll="#contact">Contact Us</a>
+            <a href="#" class="header-inner-nav_a"><img src="img/lupa.png" alt=""></a>
+        </nav>
+    </div>
+</section>
+<!-- /section-header -->
+
+
+<!-- section-intro -->
+<section class="section-intro" id="intro">
+    <div class="intro">
+        <div class="intro-container">
+            <div class="intro-container-content">
+                <div class="intro-container-content_tittle">Web development project</div>
+                <div class="intro-container-content_subtittle">Very suitable to support all web development projects</div>
+                <button class="intro-container-content_btn btn-transparent">OUR SERVICES</button>
+                <button class="intro-container-content_btn btn-green">HIRE IS NOW</button>
+                <a class="intro-container-content-link" href="#" data-scroll="#footer"><img src="img/galka.png" alt="" class="intro-cainer-content-link_img"></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /section-intro -->
+
+
+<!-- section-about -->
+<section class="section-about" id="about"> 
+    <div class="about section-container">
+            <div class="container_tittle">About Us</div>
+            <div class="container_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div> 
+        <div class="about-cards">
+            <div class="about-cards_item">
+                <img class="about-cards_item_img" src="img/about/1.png" alt="">
+                <div class="about-cards_item_tittle">Awesome Icons</div>
+                <div class="about-cards_item_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div>
+            </div>
+            <div class="about-cards_item">
+                <img class="about-cards_item_img" src="img/about/2.png" alt="">
+                <div class="about-cards_item_tittle">One Page</div>
+                <div class="about-cards_item_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div>
+            </div>
+            <div class="about-cards_item">
+                <img class="about-cards_item_img" src="img/about/3.png" alt="">
+                <div class="about-cards_item_tittle">Fully Responsive</div>
+                <div class="about-cards_item_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /section-about -->
+
+
+<!-- section-services -->
+<section class="section-services" id="services">
+    <div class="services-container section-container">
+        <div class="container_tittle">Our Services</div>
+        <div class="container_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+        <div class="services-container-cards">
+            <div class="services-container-cards-item">
+                <svg class="services-container-cards-item_img"><use xlink:href="#phone"></use></svg>
+                <div class="services-container-cards-item_tittle">Research</div>
+                <div class="services-container-cards-item_text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
+                <button class="services-container-cards-item_btn">READ MORE</button>
+            </div>
+            <div class="services-container-cards-item">
+                <svg class="services-container-cards-item_img"><use xlink:href="#phone"></use></svg>
+                <div class="services-container-cards-item_tittle">Portfolio</div>
+                <div class="services-container-cards-item_text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
+                <button class="services-container-cards-item_btn">READ MORE</button>
+            </div>
+            <div class="services-container-cards-item">
+                <svg class="services-container-cards-item_img"><use xlink:href="#phone"></use></svg>
+                <div class="services-container-cards-item_tittle">Support</div>
+                <div class="services-container-cards-item_text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
+                <button class="services-container-cards-item_btn">READ MORE</button>
+            </div>
+            <div class="services-container-cards-item">
+                <svg class="services-container-cards-item_img"><use xlink:href="#phone"></use></svg>
+                <div class="services-container-cards-item_tittle">Documentation</div>
+                <div class="services-container-cards-item_text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
+                <button class="services-container-cards-item_btn">READ MORE</button>
+            </div>
+            <div class="services-container-cards-item">
+                <svg class="services-container-cards-item_img"><use xlink:href="#phone"></use></svg>
+                <div class="services-container-cards-item_tittle">Development</div>
+                <div class="services-container-cards-item_text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
+                <button class="services-container-cards-item_btn">READ MORE</button>
+            </div>
+            <div class="services-container-cards-item">
+                <svg class="services-container-cards-item_img"><use xlink:href="#phone"></use></svg>
+                <div class="services-container-cards-item_tittle">Design</div>
+                <div class="services-container-cards-item_text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
+                <button class="services-container-cards-item_btn">READ MORE</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /section-services -->
+
+
+<!-- section-works -->
+<section class="section-works" id="works">
+    <div class="works-container section-container">
+        <div class="container_tittle">Latest Works</div>
+        <div class="container_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+        <div class="works-container-buttons">
+            <button class="works-container-buttons_btn btn-active" data-btn="all">ALL</button>
+            <button class="works-container-buttons_btn" data-btn="web-design">WEB DESIGN</button>
+            <button class="works-container-buttons_btn" data-btn="ui-design">UI/UX DESIGN</button>
+            <button class="works-container-buttons_btn" data-btn="mockup">MOCKUPS</button>
+        </div>
+        <div class="works-container-cards">
+            <div class="works-container-cards-item card-active" data-sort="web-design">
+                <img class="works-container-cards-item_img" src="img/works/5.png" alt="">
+                <div class="works-container-cards-item-mask"></div>
+                <div class="works-container-cards-item-text">
+                    <div class="works-container-cards-item-text_tittle">Hand Watch</div>
+                    <div class="works-container-cards-item-text_subtittle">ui/ux design</div>
+                </div>     
+            </div>
+            <div class="works-container-cards-item card-active" data-sort="ui-design">
+                <img class="works-container-cards-item_img" src="img/works/2.png" alt="">
+                <div class="works-container-cards-item-mask"></div>
+                <div class="works-container-cards-item-text">
+                    <div class="works-container-cards-item-text_tittle">Hand Watch</div>
+                    <div class="works-container-cards-item-text_subtittle">ui/ux design</div>
+                </div>     
+            </div>
+            <div class="works-container-cards-item card-active" data-sort="mockup">
+                <img class="works-container-cards-item_img" src="img/works/3.png" alt="">
+                <div class="works-container-cards-item-mask"></div>
+                <div class="works-container-cards-item-text">
+                    <div class="works-container-cards-item-text_tittle">Hand Watch</div>
+                    <div class="works-container-cards-item-text_subtittle">ui/ux design</div>
+                </div>     
+            </div>
+            <div class="works-container-cards-item card-active" data-sort="ui-design">
+                <img class="works-container-cards-item_img" src="img/works/4.png" alt="">
+                <div class="works-container-cards-item-mask"></div>
+                <div class="works-container-cards-item-text">
+                    <div class="works-container-cards-item-text_tittle">Hand Watch</div>
+                    <div class="works-container-cards-item-text_subtittle">ui/ux design</div>
+                </div>     
+            </div>
+            <div class="works-container-cards-item card-active" data-sort="mockup">
+                <img class="works-container-cards-item_img" src="img/works/5.png" alt="">
+                <div class="works-container-cards-item-mask"></div>
+                <div class="works-container-cards-item-text">
+                    <div class="works-container-cards-item-text_tittle">Hand Watch</div>
+                    <div class="works-container-cards-item-text_subtittle">ui/ux design</div>
+                </div>     
+            </div>
+            <div class="works-container-cards-item card-active" data-sort="web-design" class="web-design">
+                <img class="works-container-cards-item_img" src="img/works/6.png" alt="">
+                <div class="works-container-cards-item-mask"></div>
+                <div class="works-container-cards-item-text">
+                    <div class="works-container-cards-item-text_tittle">Hand Watch</div>
+                    <div class="works-container-cards-item-text_subtittle">ui/ux design</div>
+                </div>     
+            </div>
+        </div>
+        <button class="works-container-button">VIEW ALL</button>
+    </div>
+</section>
+<!-- /section-works -->
+
+
+<!-- section-plan -->
+<section class="section-plan" id="plan">
+    <div class="plan-container section-container">
+        <div class="container_tittle">Pricing Plan</div>
+        <div class="container_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+        <div class="plan-container-cards">
+            <div class="plan-container-cards-item">
+                <img class="plan-container-cards-item_rect" src="img/Rectangle.png" alt="">
+                <div class="plan-container-cards-item-tittle">
+                    <div class="plan-container-cards-item-tittle_tittle">Free Trail</div>
+                    <div class="plan-container-cards-item-tittle_subtittle"><sup>$</sup><span>00</span> per month</div>
+                </div>
+                <div class="plan-container-cards-item-info">
+                    <div class="plan-container-cards-item-info_text">30 Free Trail</div>
+                    <div class="plan-container-cards-item-info_text">5 Free Projects</div>
+                    <div class="plan-container-cards-item-info_text">PHP 5 Enabled</div>
+                    <div class="plan-container-cards-item-info_text">24/7 Suports</div>
+                </div>
+                <button class="plan-container-cards-item_btn">Order Now</button>
+            </div>
+            <div class="plan-container-cards-item">
+                <img class="plan-container-cards-item_rect" src="img/Rectangle.png" alt="">
+                <div class="plan-container-cards-item-tittle">
+                    <div class="plan-container-cards-item-tittle_tittle">Basic</div>
+                    <div class="plan-container-cards-item-tittle_subtittle"><sup>$</sup><span>50</span> per month</div>
+                </div>
+                <div class="plan-container-cards-item-info">
+                    <div class="plan-container-cards-item-info_text">30 Free Trail</div>
+                    <div class="plan-container-cards-item-info_text">5 Free Projects</div>
+                    <div class="plan-container-cards-item-info_text">PHP 5 Enabled</div>
+                    <div class="plan-container-cards-item-info_text">24/7 Suports</div>
+                </div>
+                <button class="plan-container-cards-item_btn">Order Now</button>
+            </div>
+            <div class="plan-container-cards-item">
+                <img class="plan-container-cards-item_rect" src="img/Rectangle.png" alt="">
+                <div class="plan-container-cards-item-tittle">
+                    <div class="plan-container-cards-item-tittle_tittle">Ultimates</div>
+                    <div class="plan-container-cards-item-tittle_subtittle"><sup>$</sup><span>99</span> per month</div>
+                </div>
+                <div class="plan-container-cards-item-info">
+                    <div class="plan-container-cards-item-info_text">30 Free Trail</div>
+                    <div class="plan-container-cards-item-info_text">5 Free Projects</div>
+                    <div class="plan-container-cards-item-info_text">PHP 5 Enabled</div>
+                    <div class="plan-container-cards-item-info_text">24/7 Suports</div>
+                </div>
+                <button class="plan-container-cards-item_btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /section-plan -->
+
+
+<!-- section-team -->
+<section class="section-team" id="team">
+    <div class="team-container section-container">
+        <div class="container_tittle">Our Team Member</div>
+        <div class="container_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+        <div class="team-container-cards" id="slider">
+            <div>
+                <div class="team-container-cards-item">
+                    <img class="team-container-cards-item_img" src="img/team/1.png" alt="">
+                    <div class="team-container-cards-item_name">John Doe</div>
+                    <div class="team-container-cards-item_prof">General Manager</div>
+                    <div class="team-container-cards-item-icons">
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#facebook"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#twitter"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#message"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#ball"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="team-container-cards-item">
+                    <img class="team-container-cards-item_img" src="img/team/2.png" alt="">
+                    <div class="team-container-cards-item_name">Alexa Biru</div>
+                    <div class="team-container-cards-item_prof">Office Director</div>
+                    <div class="team-container-cards-item-icons">
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#facebook"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#twitter"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#message"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#ball"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="team-container-cards-item">
+                    <img class="team-container-cards-item_img" src="img/team/3.png" alt="">
+                    <div class="team-container-cards-item_name">Ronobir sing</div>
+                    <div class="team-container-cards-item_prof">Admin</div>
+                    <div class="team-container-cards-item-icons">
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#facebook"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#twitter"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#message"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#ball"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="team-container-cards-item">
+                    <img class="team-container-cards-item_img" src="img/team/2.png" alt="">
+                    <div class="team-container-cards-item_name">John Doe</div>
+                    <div class="team-container-cards-item_prof">General Manager</div>
+                    <div class="team-container-cards-item-icons">
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#facebook"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#twitter"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#message"></use></svg>
+                        </a>
+                        <a href="#" class="team-container-cards-item-icons-cont">
+                            <svg class="team-container-cards-item-icons-cont_icon"><use xlink:href="#ball"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /section-team -->
+
+
+<!-- section-blog -->
+<section class="section-blog" id="blog">
+    <div class="blog-container section-container">
+        <div class="container_tittle">Blog</div>
+        <div class="container_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+        <div class="blog-container-cards">
+            <div class="blog-container-cards-item">
+                <div class="blog-container-cards-item-pic">
+                    <img src="img/blog/1.png" alt="">
+                </div>
+                <div class="blog-container-cards-item-text cards-item-right">
+                    <div class="blog-container-cards-item-text_tittle">SEO Quis Vestibulum</div>
+                    <div class="blog-container-cards-item-text_info">
+                        <img src="img/blog/icon1.png" alt="">
+                        <span class="blog-container-cards-item-text_info_data">14.0702017</span>
+                        <img src="img/blog/icon2.png" alt="">
+                        <span>Development</span>
+                    </div>
+                    <div class="blog-container-cards-item-text_content">
+                        Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
+                    </div>
+                </div>
+            </div>
+            <div class="blog-container-cards-item">
+                <div class="blog-container-cards-item-text">
+                    <div class="blog-container-cards-item-text_tittle">SEO Quis Vestibulum</div>
+                    <div class="blog-container-cards-item-text_info">
+                        <img src="img/blog/icon1.png" alt="">
+                        <span class="blog-container-cards-item-text_info_data">14.0702017</span>
+                        <img src="img/blog/icon2.png" alt="">
+                        <span>Development</span>
+                    </div>
+                    <div class="blog-container-cards-item-text_content">
+                        Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
+                    </div>
+                </div>
+                <div class="blog-container-cards-item-pic cards-item-right">
+                        <img src="img/blog/2.png" alt="">
+                </div>
+            </div>
+            <div class="blog-container-cards-item">
+                <div class="blog-container-cards-item-pic">
+                    <img src="img/blog/3.png" alt="">
+                </div>
+                <div class="blog-container-cards-item-text cards-item-right">
+                    <div class="blog-container-cards-item-text_tittle">SEO Quis Vestibulum</div>
+                    <div class="blog-container-cards-item-text_info">
+                        <img src="img/blog/icon1.png" alt="">
+                        <span class="blog-container-cards-item-text_info_data">14.0702017</span>
+                        <img src="img/blog/icon2.png" alt="">
+                        <span>Development</span>
+                    </div>
+                    <div class="blog-container-cards-item-text_content">
+                        Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="works-container-button-cont">
+            <button class="works-container-cont_button">MORE VIEW</button>
+        </div>
+    </div>
+</section>
+<!-- /section-blog -->
+
+
+<!-- section-contact -->
+<section class="section-contact" id="contact">
+    <div class="contact-container section-container">
+        <div class="container_tittle contact-container_tittle">Blog</div>
+        <div class="container_subtittle contact-container_subtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+        <div class="contact-container-cards">
+            <div class="contact-container-cards-item">
+                <div class="contact-container-cards-item-pic">
+                    <img src="img/contact/1.png" alt="">
+                </div>
+                <div class="contact-container-cards-item-text">
+                    Nobinagar savar,Dhaka Bangladesh
+                </div>
+            </div>
+            <div class="contact-container-cards-item">
+                <div class="contact-container-cards-item-pic">
+                    <img src="img/contact/2.png" alt="">
+                </div>
+                <div class="contact-container-cards-item-text">
+                    +8801743331996<br>
+                    +8801928737807
+                </div>
+            </div>
+            <div class="contact-container-cards-item">
+                <div class="contact-container-cards-item-pic">
+                    <img src="img/contact/3.png" alt="">
+                </div>
+                <div class="contact-container-cards-item-text">
+                    quickmasud@gmail.com<br>
+                    quickmasud@yahoo.com
+                </div>
+            </div>
+        </div>
+        <input class="contact-container_input input-name" type="text" placeholder="Your NAME">
+        <input class="contact-container_input input-email" type="text" placeholder="Your Email">
+        <input class="contact-container_input input-message" type="text" placeholder="Write Massage">
+        <div class="contact-container-button-cont">
+            <button class="contact-container-cont_button">SEND</button>
+        </div>
+    </div>
+</section>
+<!-- /section-contact -->
+
+
+<!-- section-footer -->
+<section class="section-footer" id="footer">
+    <div>All rights Reserved © 2017</div>
+</section>
+<!-- /section-footer -->
+
+<script type="text/javascript" src="slick.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
